@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: SmartHarvest
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app/app.py
+    postBuildCommand: apt-get update && apt-get install -y gfortran
